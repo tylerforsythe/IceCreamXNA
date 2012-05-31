@@ -1,0 +1,541 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{801E92B0-D38F-487B-A612-67480344B5ED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milkshake</RootNamespace>
+    <AssemblyName>Milkshake</AssemblyName>
+    <StartupObject>Milkshake.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>C799B69AC1326184CD1388DD219E6430A7793B11</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Milkshake_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>IceCream &amp; Milkshake</ProductName>
+    <PublisherName>Epsicode &amp; Conkerjo</PublisherName>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.1.1.2</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>IceCream_Icon_128px.ico</ApplicationIcon>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <XnaFrameworkVersion>v3.1</XnaFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FarseerPhysics, Version=2.1.1.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Build\FarseerPhysics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d" />
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XPTable, Version=1.1.7.14700, Culture=neutral, PublicKeyToken=24950705800d2198">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\XPTable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\AnimatedSprites\AnimatedSpriteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\AnimatedSprites\AnimatedSpriteEditor.Designer.cs">
+      <DependentUpon>AnimatedSpriteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlFloat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlFloat.Designer.cs">
+      <DependentUpon>AutoControlFloat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebugTraceListener.cs" />
+    <Compile Include="Editors\Components\AutoControlBool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlBool.Designer.cs">
+      <DependentUpon>AutoControlBool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlInt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlInt.Designer.cs">
+      <DependentUpon>AutoControlInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlVector2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlVector2.Designer.cs">
+      <DependentUpon>AutoControlVector2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlString.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlString.Designer.cs">
+      <DependentUpon>AutoControlString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlPoint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlPoint.Designer.cs">
+      <DependentUpon>AutoControlPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlEnum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlEnum.Designer.cs">
+      <DependentUpon>AutoControlEnum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlRectangle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlRectangle.Designer.cs">
+      <DependentUpon>AutoControlRectangle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlByte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\AutoControlByte.Designer.cs">
+      <DependentUpon>AutoControlByte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Components\GenericComponentControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\Components\GenericComponentControl.Designer.cs">
+      <DependentUpon>GenericComponentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\CompositeEntities\CompositeEntityEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\CompositeEntities\CompositeEntityEditor.Designer.cs">
+      <DependentUpon>CompositeEntityEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\CompositeEntities\CompositeKeyFrameEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\LinearPropertyControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\Materials\MaterialEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Materials\MaterialEditor.designer.cs">
+      <DependentUpon>MaterialEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Particles\ParticleEffectControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\Particles\ParticleEffectEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Particles\ParticleEffectEditor.designer.cs">
+      <DependentUpon>ParticleEffectEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Particles\ShapeSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Particles\ShapeSelection.designer.cs">
+      <DependentUpon>ShapeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\PostProcessAnimations\PostProcessAnimationControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\PostProcessAnimations\PostProcessAnimationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\PostProcessAnimations\PostProcessAnimationEditor.Designer.cs">
+      <DependentUpon>PostProcessAnimationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Sprites\SpriteEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\Sprites\SpriteEditor.designer.cs">
+      <DependentUpon>SpriteEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Sprites\SpriteEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\TileGrids\TileCopy.cs" />
+    <Compile Include="Editors\TileGrids\TileGridMinimapControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\TileGrids\TileGridEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\TileGrids\TileGridEditor.Designer.cs">
+      <DependentUpon>TileGridEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\TileGrids\TileSelectionControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\TileSheet\TileSheetEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\TileSheet\TileSheetEditor.Designer.cs">
+      <DependentUpon>TileSheetEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ZoomBox.cs" />
+    <Compile Include="ErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorForm.Designer.cs">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsDeviceControls\ContentBuilder.cs" />
+    <Compile Include="Editors\TileGrids\TileGridEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GraphicsDeviceControls\SceneEditorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GraphicsDeviceControls\ErrorLogger.cs" />
+    <Compile Include="GraphicsDeviceControls\GraphicsDeviceControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GraphicsDeviceControls\GraphicsDeviceService.cs" />
+    <Compile Include="GraphicsDeviceControls\SceneItemPreviewControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GraphicsDeviceControls\ServiceContainer.cs" />
+    <Compile Include="GraphicsDeviceControls\MaterialDisplayControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MilkshakeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MilkshakeForm.Designer.cs">
+      <DependentUpon>MilkshakeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MilkshakePreferences.cs" />
+    <Compile Include="MilkshakeSceneEditorTool.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="IceCreamProject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\AnimatedSprites\AnimatedSpriteEditor.resx">
+      <DependentUpon>AnimatedSpriteEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlFloat.resx">
+      <DependentUpon>AutoControlFloat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlBool.resx">
+      <DependentUpon>AutoControlBool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlInt.resx">
+      <DependentUpon>AutoControlInt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlVector2.resx">
+      <DependentUpon>AutoControlVector2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlString.resx">
+      <DependentUpon>AutoControlString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlPoint.resx">
+      <DependentUpon>AutoControlPoint.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlEnum.resx">
+      <DependentUpon>AutoControlEnum.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlRectangle.resx">
+      <DependentUpon>AutoControlRectangle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\AutoControlByte.resx">
+      <DependentUpon>AutoControlByte.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Components\GenericComponentControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GenericComponentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\CompositeEntities\CompositeEntityEditor.resx">
+      <DependentUpon>CompositeEntityEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Materials\MaterialEditor.resx">
+      <DependentUpon>MaterialEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Particles\ParticleEffectEditor.resx">
+      <DependentUpon>ParticleEffectEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Particles\ShapeSelection.resx">
+      <DependentUpon>ShapeSelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\PostProcessAnimations\PostProcessAnimationEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PostProcessAnimationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\Sprites\SpriteEditor.resx">
+      <DependentUpon>SpriteEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\TileGrids\TileGridEditor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TileGridEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\TileSheet\TileSheetEditor.resx">
+      <DependentUpon>TileSheetEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorForm.resx">
+      <DependentUpon>ErrorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MilkshakeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MilkshakeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selectors\TileSheetSelectorDialog.resx">
+      <DependentUpon>TileSheetSelectorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selectors\MaterialSelectorDialog.resx">
+      <DependentUpon>MaterialSelectorDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selectors\ProjectSettingsForm.resx">
+      <DependentUpon>ProjectSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selectors\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\SpriteSheetGenerator.resx">
+      <DependentUpon>SpriteSheetGenerator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizards\NewSceneWizard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewSceneWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SceneItemGroup.cs" />
+    <Compile Include="Selectors\TileSheetSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selectors\TileSheetSelectorDialog.designer.cs">
+      <DependentUpon>TileSheetSelectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\MaterialSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selectors\MaterialSelectorDialog.designer.cs">
+      <DependentUpon>MaterialSelectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\ProjectSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selectors\ProjectSettingsForm.Designer.cs">
+      <DependentUpon>ProjectSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\SceneItemTypeStruct.cs" />
+    <Compile Include="Selectors\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selectors\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\SpriteInfo.cs" />
+    <Compile Include="Tools\SpriteSheetGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\SpriteSheetGenerator.Designer.cs">
+      <DependentUpon>SpriteSheetGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizards\NewSceneWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizards\NewSceneWizard.Designer.cs">
+      <DependentUpon>NewSceneWizard.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Milkshake_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Resources\car.png" />
+    <Content Include="IceCream_Icon_128px.ico" />
+    <Content Include="Resources\checker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\color_swatch.png" />
+    <Content Include="Resources\cross.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\font.png" />
+    <None Include="Resources\plugin.png" />
+    <Content Include="Resources\pivot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ppBackground.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\user.png" />
+    <None Include="Resources\weather_sun.png" />
+    <None Include="Resources\weather_lightning.png" />
+    <None Include="Resources\sport_soccer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IceCream\IceCream.csproj">
+      <Project>{F69EE070-16E6-420E-BCF4-B9B809DCF87D}</Project>
+      <Name>IceCream</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MilkshakeLibrary\MilkshakeLibrary.csproj">
+      <Project>{FDA579D2-BEDF-47DF-A638-CC172B7CC3E5}</Project>
+      <Name>MilkshakeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6E1A9B5-FC1D-4869-9FF4-1BC1D7F153F7}</ProjectGuid>
+    <ProjectTypeGuids>{E613F3A2-FE9C-494F-B74E-F63BCB86FEA6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IceCream</RootNamespace>
+    <AssemblyName>IceCreamXnaTouch</AssemblyName>
+    <MtouchSdkVersion>3.2</MtouchSdkVersion>
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG; XNATOUCH</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>True</MtouchDebug>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>False</MtouchDebug>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <DefineConstants>XNATOUCH</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG; XNATOUCH</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>True</MtouchDebug>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>False</MtouchDebug>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DefineConstants>XNATOUCH</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties InternalTargetFrameworkVersion="IPhone" />
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="Components\IceSceneComponent.cs" />
+    <Compile Include="Components\TestComponent.cs" />
+    <Compile Include="ComponentTypeContainer.cs" />
+    <Compile Include="Debug\Console\ConsoleKeyMap.cs" />
+    <Compile Include="Debug\Console\GameConsole.cs" />
+    <Compile Include="Debug\Console\IGameConsole.cs" />
+    <Compile Include="Debug\IceProfile.cs" />
+    <Compile Include="Debug\IceProfilerNames.cs" />
+    <Compile Include="IceCounter.cs" />
+    <Compile Include="IceVectorUtil.cs" />
+    <Compile Include="IDeepCopy.cs" />
+    <Compile Include="Debug\IceProfiler.cs" />
+    <Compile Include="Drawing\DebugShapes.cs" />
+    <Compile Include="Drawing\EmbeddedIceEffectType.cs" />
+    <Compile Include="Drawing\IceEffect.cs" />
+    <Compile Include="Drawing\IceEffectParameters.cs" />
+    <Compile Include="Drawing\IceEffects\BloomEffect.cs" />
+    <Compile Include="Drawing\IceEffects\GaussianBlurEffect.cs" />
+    <Compile Include="Drawing\IceEffects\NoEffect.cs" />
+    <Compile Include="Drawing\PostProcessRequest.cs" />
+    <Compile Include="Drawing\PrimitiveBatch.cs" />
+    <Compile Include="Drawing\RenderTargetManager.cs" />
+    <Compile Include="IceAsset.cs" />
+    <Compile Include="IceCreamExtensions.cs">
+    </Compile>
+    <Compile Include="IceFont.cs" />
+    <Compile Include="Input\InputCore.cs">
+    </Compile>
+    <Compile Include="LinkFuse.cs" />
+    <Compile Include="LinkPoint.cs" />
+    <Compile Include="ResourcePool.cs" />
+    <Compile Include="SceneItemParentCollection.cs" />
+    <Compile Include="SceneItems\AnimatedSprite.cs" />
+    <Compile Include="Attributes\IceComponentAttribute.cs" />
+    <Compile Include="SceneItems\AnimationClasses\AnimationFrame.cs" />
+    <Compile Include="SceneItems\AnimationClasses\AnimationInfo.cs" />
+    <Compile Include="SceneItems\Camera.cs" />
+    <Compile Include="Components\IceComponent.cs" />
+    <Compile Include="Drawing\DrawingManager.cs" />
+    <Compile Include="Drawing\DrawingLayer.cs" />
+    <Compile Include="Drawing\DrawingLayerComponent.cs" />
+    <Compile Include="Drawing\DrawRequest.cs" />
+    <Compile Include="GlobalDataHolder.cs" />
+    <Compile Include="IceBase.cs" />
+    <Compile Include="IceCore.cs" />
+    <Compile Include="IceMath.cs" />
+    <Compile Include="QuadTree\FRect.cs" />
+    <Compile Include="QuadTree\QuadTree.cs" />
+    <Compile Include="QuadTree\QuadTreeNode.cs" />
+    <Compile Include="QuadTree\QuadTreePositionItem.cs" />
+    <Compile Include="SceneBase.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="Randomizer.cs" />
+    <Compile Include="IceScene.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeAnimation.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeBone.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeBoneTransform.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\SubItemRefConverter.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\SceneItemRefConverter.cs" />
+    <Compile Include="SceneItems\CompositeEntity.cs" />
+    <Compile Include="SceneItems\CompositeEntityClasses\CompositeKeyFrame.cs" />
+    <Compile Include="SceneItems\Polygon.cs" />
+    <Compile Include="SceneItems\TemplateLinkedItem.cs" />
+    <Compile Include="SceneItems\TileSheet.cs" />
+    <Compile Include="SceneItems\IAnimationDirector.cs" />
+    <Compile Include="SceneItems\IAnimation.cs" />
+    <Compile Include="SceneItems\ISubItemCollection.cs" />
+    <Compile Include="SceneItems\TypeConverters\LayerConverter.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\ParticleOrientation.cs" />
+    <Compile Include="SceneItems\PostProcessAnimation.cs" />
+    <Compile Include="SceneItems\SceneItem.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\Emitter.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\EmitterShape.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\EmitterShapeType.cs" />
+    <Compile Include="LinearProperty.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\OverLifeSettings.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\Particle.cs" />
+    <Compile Include="SceneItems\ParticleEffect.cs" />
+    <Compile Include="SceneItems\ParticlesClasses\ParticleType.cs" />
+    <Compile Include="SceneItems\TextItem.cs" />
+    <Compile Include="SceneItems\TileGrid.cs" />
+    <Compile Include="SceneItems\TileGridClasses\Tile.cs" />
+    <Compile Include="SceneItems\TileGridClasses\TileLayer.cs" />
+    <Compile Include="SceneManager.cs" />
+    <Compile Include="Serialization\SceneSerializer.cs" />
+    <Compile Include="SceneItems\Sprite.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Volumes\Shared folder\XnaTouchSVN\XnaTouch.Framework\XnaTouch.Framework.csproj">
+      <Project>{DB8508BB-9849-4CC2-BC0F-8EB5DACB3C47}</Project>
+      <Name>XnaTouch.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
